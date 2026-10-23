@@ -1,0 +1,8 @@
+package-lock.json
+packages/game-data/source/
+packages/game-data/snapshot.json
+docs/design/
+dist/
+node_modules/
+.local/
+packages/game-data/ores.json

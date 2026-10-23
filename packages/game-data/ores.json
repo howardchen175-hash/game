@@ -1,0 +1,102 @@
+[
+  {
+    "id": "ORE_RE",
+    "name": "稀土矿",
+    "rarity": "罕见",
+    "rate": 66.825,
+    "bookValue": 18.0,
+    "refinedName": "稀土金属",
+    "input": 60,
+    "minutes": 8.889
+  },
+  {
+    "id": "ORE_AU",
+    "name": "金矿",
+    "rarity": "稀有",
+    "rate": 72.9,
+    "bookValue": 16.0,
+    "refinedName": "金锭",
+    "input": 50,
+    "minutes": 7.407
+  },
+  {
+    "id": "ORE_TI",
+    "name": "钛矿",
+    "rarity": "罕见",
+    "rate": 85.05,
+    "bookValue": 12.0,
+    "refinedName": "钛锭",
+    "input": 50,
+    "minutes": 7.407
+  },
+  {
+    "id": "ORE_AG",
+    "name": "银矿",
+    "rarity": "稀有",
+    "rate": 94.77,
+    "bookValue": 10.0,
+    "refinedName": "银锭",
+    "input": 80,
+    "minutes": 10.37
+  },
+  {
+    "id": "ORE_CU",
+    "name": "铜矿",
+    "rarity": "常见",
+    "rate": 115.425,
+    "bookValue": 7.0,
+    "refinedName": "铜锭",
+    "input": 50,
+    "minutes": 5.926
+  },
+  {
+    "id": "ORE_U",
+    "name": "铀矿",
+    "rarity": "较稀有",
+    "rate": 89.775,
+    "bookValue": 9.0,
+    "refinedName": "浓缩铀",
+    "input": 20,
+    "minutes": 8.889
+  },
+  {
+    "id": "ORE_AL",
+    "name": "铝矿",
+    "rarity": "常见",
+    "rate": 127.575,
+    "bookValue": 5.0,
+    "refinedName": "铝锭",
+    "input": 60,
+    "minutes": 6.667
+  },
+  {
+    "id": "ORE_FE",
+    "name": "铁矿",
+    "rarity": "常见",
+    "rate": 139.725,
+    "bookValue": 4.5,
+    "refinedName": "铁锭",
+    "input": 40,
+    "minutes": 5.926
+  },
+  {
+    "id": "ORE_C",
+    "name": "碳矿",
+    "rarity": "常见",
+    "rate": 151.875,
+    "bookValue": 3.5,
+    "refinedName": "工业碳",
+    "input": 80,
+    "minutes": 7.407
+  },
+  {
+    "id": "ORE_SI",
+    "name": "硅矿",
+    "rarity": "常见",
+    "rate": 145.8,
+    "bookValue": 3.0,
+    "refinedName": "硅晶",
+    "input": 100,
+    "minutes": 8.889
+  }
+]
