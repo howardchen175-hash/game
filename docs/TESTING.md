@@ -31,3 +31,11 @@
 - `npm run test:e2e` 通过：2 项测试、无跳过。密码验证同时检查限流 429，并按照认证库 `X-Retry-After` 等待后成功重新登录，未关闭限流来通过测试。
 - 独立干净目录重新执行 `npm ci`、`npm run build`、启动构建产物，并验证 HTML/JS、数据库健康、注册、创建存档、九星域世界及浏览器渲染成功。该验证使用当前数据库的独立临时用户，不代表新机器数据库恢复已验证。
 - `npm audit --omit=dev --audit-level=high` 返回 0 个漏洞。GitHub CI 工作流已提供，尚未在远程执行。
+
+## 本机试玩入口验证
+
+新增 `Dockerfile`、`compose.play.yml`、`play.cmd` / `scripts/play.ps1` 与 `play.sh`。容器采用独立数据库卷与随机本地配置，不复用或重置开发环境的玩家存档。
+
+实际验证：Docker 镜像构建与数值/类型/前端构建通过；Compose 服务健康、浏览器登录和进入星图、注册与创建存档、停止并启动后世界快照完全一致。测试结束只清理当次测试用户。Linux shell 启动入口已执行；Windows 双击入口已提供，但当前执行环境没有 Windows，尚未完成 Windows 实机验证。
+
+云环境的 HTTPS 代理 CA 不会自动进入 Docker 构建。此次通过 BuildKit 的可选 `build_ca` secret 注入已配置的 CA，保持 TLS 校验开启；没有把代理 CA 或认证值写入镜像/仓库。普通本机使用系统正常信任链即可。如果自己的公司网络也使用 HTTPS 代理，可由网络管理员提供可信 CA 后使用 Dockerfile 的此构建入口，不能关闭 TLS 校验。

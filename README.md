@@ -6,7 +6,24 @@
 
 生产、研究、舰船装备、航行、侦察战斗与殖民尚未实现；相关界面明确标识阶段，不模拟已完成玩法。
 
-## 启动
+## 我只想试玩（Windows）
+
+1. 安装并打开 [Docker Desktop](https://www.docker.com/products/docker-desktop/)，等它显示已运行。Windows 使用 Linux containers 模式。
+2. 在本仓库页面点击绿色 **Code → Download ZIP**，下载后**解压**到一个文件夹。
+3. 双击解压后文件夹里的 **`play.cmd`**。第一次会下载并构建游戏，可能需要几分钟，请等黑色窗口完成。
+4. 成功后浏览器会自动打开游戏。点击「创建账户」，注册后创建一个存档，就能进入星图。
+
+不需要另外安装 Node、Python 或 PostgreSQL。后面试玩仍然双击同一个 `play.cmd`，账户和存档会保留。关闭网页不会删除存档。停止运行可打开 Docker Desktop，停止 `cosmic-colony-play`，或在命令行执行 `play.cmd -Stop`。
+
+如果没有自动打开，在**运行启动器的这台电脑**浏览器地址栏输入 `http://localhost:8080`。这不是公网地址，GitHub 页面本身也不是游戏入口。手机暂时不能直接进入此本机试玩方式。
+
+macOS / Linux：装好 Docker Desktop（或 Docker Engine + Compose）后，在解压目录运行 `bash play.sh`；停止用 `bash play.sh --stop`。
+
+此版本能体验注册登录、存档切换、银河图、进入星系和查看母星。采矿、造船、打海盗暂未开放。不要删除 `.env.play` 或 Docker 的数据卷；迁移到另一台电脑不会自动同步存档。
+
+遇到错误时保留窗口里的错误文字，**不要发送 `.env.play` 文件或其中内容**。
+
+## 开发者启动
 
 需要 Node.js 24、npm 11+、Python 3（标准库即可）及运行中的 Docker Engine。也可自行提供 PostgreSQL 17。
 

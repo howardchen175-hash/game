@@ -32,3 +32,9 @@
 认证表由所固定版本 Better Auth 的迁移计划生成后保存为 001 SQL；运行时只执行版本化 SQL，不自动同步 schema。存档是按账户隔离的 JSONB 世界快照，含 seed/数据/存档/生成器版本；删除保留审计和软删除标记。本阶段无资源变更，不提前创建战斗/生产表。槽位限制使用用户行锁与数据库唯一索引。迁移受 advisory lock 保护，进程中断时整份 SQL 回滚。
 
 Docker PostgreSQL 数据在独立卷中，卷不等同于仓库或云环境快照。未验证跨任务 Docker 卷恢复；发布前应另设数据库备份与恢复策略。不要把当前实例测试等同于远程部署。
+
+## 006 · 非开发者本机试玩
+
+用户要求清楚说明试玩方式并将实际代码交付到 GitHub。增加独立 Docker Compose 入口：玩家只需 Docker Desktop，无需安装 Node/Python/PostgreSQL；Windows 用 `play.cmd`，macOS/Linux 用 `bash play.sh`。浏览器使用本机 8080，同源 API 与数据库运行于容器，端口只绑定 127.0.0.1，不表示已发布公网网站。HTTP 本机试玩使用 development Cookie 设置；不能据此声称生产 TLS 已完成。
+
+试玩配置保存在被忽略的 `.env.play`，与开发用 `.env` 分离；随机凭据在玩家机器生成，保留已有配置，停止时保留卷。基础镜像使用已验证的 digest；企业/云代理 CA 只作为可选 BuildKit secret 注入 npm 安装步骤，不关闭证书校验，不保留到镜像。

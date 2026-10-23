@@ -1,5 +1,11 @@
 # 更新记录
 
+## 本机试玩入口
+
+- 新增 Docker Compose、Windows `play.cmd` 与 macOS/Linux `play.sh`，自动生成独立本地配置、启动数据库并打开浏览器。
+- README 增加非开发者试玩步骤；明确 GitHub 代码、本机运行和公网部署的区别。
+- 已将账户与星图代码提交并推送到 GitHub main。
+
 ## 0.2.0-alpha.1
 
 - 从空仓库建立中文账户、三个独立宇宙存档与双层星图。
